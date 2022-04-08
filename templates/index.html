@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<h1>Gebäudopoly</h1>
+
+<form action = "/Ereignis" method = "get">
+
+    <button type = "submit" style = "color:rgb(76, 194, 230)" class="btn btn-outline-dark">Ziehe eine Ereigniskarte!</button>
+</form>
+
+<form action = "/Schaden" method = "get">
+    <button type = "submit" style = "color:rgb(76, 194, 230)" class="btn btn-outline-dark">Ziehe eine Schadenskarte!</button>
+</form>
+{% endblock %}
