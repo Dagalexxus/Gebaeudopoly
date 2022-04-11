@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, redirect, request, url_for, request, flash
+from flask import Flask, render_template
 from flask_session import Session
 from tempfile import mkdtemp
 
@@ -16,3 +16,15 @@ Session(app)
 @app.route('/')
 def homepage():
     return render_template("index.html")
+
+
+@app.route('/Ereignis')
+def ereignis():
+    event = "Hallo Moritz"
+    return render_template("Ereignis.html", event = event)
+
+
+@app.route('/Schaden')
+def schaden():
+    event = "Hallo Alina"
+    return render_template("Schaden.html", event = event)
