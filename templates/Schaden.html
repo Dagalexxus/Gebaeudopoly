@@ -9,21 +9,21 @@
     <h1>Gebäudopoly</h1>
 </div>
 
-<div>
-    <div>
+<div style = "align-items: center;">
+    <div class = "ereignisDiv">
         <form action = "/Ereignis" method = "get">
-            <button type = "submit" style = "color:rgb(76, 194, 230)" class="btn btn-outline-dark">Ziehe eine Ereigniskarte!</button>
+            <button type = "submit" style = "background-color:rgb(6,115,158); color: white" class="btn btn-outline-dark">Ziehe eine Ereigniskarte!</button>
         </form>
     </div>
 
-    <div>
+    <div class = "schadenDiv">
         <form action = "/Schaden" method = "get">
-            <button type = "submit" style = "color:rgb(76, 194, 230)" class="btn btn-outline-dark">Ziehe eine Schadenskarte!</button>
+            <button type = "submit" style = "background-color:rgb(6,115,158); color: white" class="btn btn-outline-dark">Ziehe eine Schadenskarte!</button>
         </form>
     </div>
 
     <div>
-        <p>
+        <p class = "eventP">
             {{ event }}
         </p>
     </div>
