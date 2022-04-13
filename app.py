@@ -1,6 +1,8 @@
+from random import randrange
 from flask import Flask, render_template
 from flask_session import Session
 from tempfile import mkdtemp
+import sqlite3
 
 
 app = Flask(__name__)
@@ -20,11 +22,29 @@ def homepage():
 
 @app.route('/Ereignis')
 def ereignis():
-    event = "Hallo Moritz"
+    db = sqlite3.connect('spiel.db')
+    db_cursor = db.cursor()
+
+    #find random number for event
+    event_number = randrange(1,51)
+
+    db_cursor.execute('SELECT Ereignis from Ereignisse WHERE ID = ?', (int(event_number),))
+    event = db_cursor.fetchone()
+    event = event[0]
+    db.close()
     return render_template("Ereignis.html", event = event)
 
 
 @app.route('/Schaden')
 def schaden():
-    event = "Hallo Alina"
+    db = sqlite3.connect('spiel.db')
+    db_cursor = db.cursor()
+
+    #find random number for event
+    event_number = randrange(1,21)
+
+    db_cursor.execute('SELECT Ereignis from Schaden WHERE ID = ?', (event_number,))
+    event = db_cursor.fetchone()
+    event= event[0]
+    db.close()
     return render_template("Schaden.html", event = event)
