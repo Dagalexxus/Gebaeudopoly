@@ -47,4 +47,4 @@ def schaden():
     event = db_cursor.fetchone()
     event= event[0]
     db.close()
-    return render_template("schaden.html", event = event)
+    return render_template("Schaden.html", event = event)
